@@ -11,22 +11,24 @@ public class ShoppingCartPage {
         this.driver = driver;
     }
 
-    public void clickCheckOutButton(){
+    public OrderSummaryPage clickCheckoutButton(){
         driver.findElement(By.id("checkout-link")).click();
+        return new OrderSummaryPage(driver);
     }
 
-    public void clickUpdateButton(){
+    public ShoppingCartPage clickUpdateButton(){
         driver.findElement(By.id("update-button")).click();
+        return new ShoppingCartPage(driver);
     }
 
-    public void clickEmptyCartButton() {
+    /*public void clickEmptyCartButton() {
         driver.findElement(By.xpath("clear_cart_link")).click();
     }
 
-    public void CheckQuantity(String s){
+    public void checkQuantity(String s){
     driver.findElement(By.id("order_line_items_attributes_0_quantity")).getAttribute("Value");
-    }
+    }*/
 
-    }
+}
 
 

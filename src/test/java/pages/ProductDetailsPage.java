@@ -13,11 +13,14 @@ public class ProductDetailsPage {
 
     //Verify Product details
 
-    public void changeQuantity(String quantity){
-    driver.findElement(By.id("quantity")).sendKeys(quantity);
+    public ProductDetailsPage changeQuantity(String quantity) {
+        driver.findElement(By.id("quantity")).sendKeys(quantity);
+        return new ProductDetailsPage(driver);
     }
 
-    public void addToCartButtonClick(){
+    public ShoppingCartPage addToCartButtonClick() {
         driver.findElement(By.id("add-to-cart-button")).click();
+        return new ShoppingCartPage(driver);
     }
 }
+

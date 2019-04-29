@@ -12,12 +12,15 @@ public class ProductListingPage {
     }
 
     //Select category and product
-    public void selectProduct(String category, String product) {
+
+    public ProductDetailsPage selectProduct(String category, String product) {
         driver.findElement(By.linkText(category)).click();
         driver.findElement(By.linkText(product)).click();
+        return new ProductDetailsPage(driver);
     }
 
-    public void addToCartButton() {
+    public ProductDetailsPage addToCartButton() {
         driver.findElement(By.id("add-to-cart-button")).click();
+        return new ProductDetailsPage(driver);
     }
 }
