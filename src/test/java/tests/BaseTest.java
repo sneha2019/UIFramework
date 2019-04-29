@@ -13,7 +13,7 @@ public class BaseTest {
 
     ChromeDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod//(alwaysRun =true)
     public void setUp() {
         String currentUsersWorkingDir = System.getProperty("user.dir");
         System.out.println("Dir is " + currentUsersWorkingDir);
@@ -21,7 +21,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-    @AfterMethod
+    @AfterMethod//(groups="smoke")
     public void tearDown()
     {
         driver.close();
